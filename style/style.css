@@ -1,0 +1,99 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: linear-gradient(to right, darkgray, darkcyan);
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    padding: 1%;
+
+
+    >nav {
+        width: 100%;
+        height: 10vh;
+
+        >ul {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            list-style-type: none;
+            gap: 1%;
+
+
+            >li {
+                display: flex;
+                height: 100%;
+                width: 20%;
+                justify-content: center;
+                align-items: center;
+                color: white;
+                font-size: 20px;
+                cursor: pointer;
+                transition: .6s;
+                position: relative;
+
+                >span {
+                    width: 0;
+                    height: 2px;
+                    background-color: burlywood;
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    transition: all 1s cubic-bezier(0, 1.18, .69, -0.49);
+                }
+
+                &:hover {
+                    scale: 1.2;
+                }
+
+            }
+        }
+    }
+
+    >section {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 80vh;
+        width: 100%;
+        padding: 5%;
+        position: relative;
+
+        >div {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 20px;
+            z-index: 0;
+            opacity: 0;
+            transition: all .7s linear;
+
+            >h2 {
+                font-size: 30px;
+            }
+
+            >p {
+                padding-inline: 10%;
+            }
+        }
+    }
+}
+
+.show {
+    z-index: 1;
+    opacity: 1;
+}
+
+.active {
+    width: 100%;
+}
